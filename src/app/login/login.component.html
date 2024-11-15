@@ -1,0 +1,5 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label>Password</label>
+  <input matInput type="password" formControlName="password">
+  <button mat-raised-button type="submit">Login</button>
+</form>
