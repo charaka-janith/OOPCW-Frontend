@@ -1,0 +1,49 @@
+<div class="container">
+  <form [formGroup]="signupForm" class="signup-form">
+    <h2 class="signup-heading">Customer Sign-Up</h2>
+
+    <mat-form-field appearance="fill">
+      <mat-label>UserName</mat-label>
+      <input matInput formControlName="userName">
+      <mat-error *ngIf="signupForm.get('userName')?.hasError('required')">Username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="signupForm.get('email')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="signupForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="signupForm.get('firstName')?.hasError('required')">First Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="signupForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="signupForm.get('password')?.hasError('required')">Password is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Contact Number</mat-label>
+      <input matInput type="tel" formControlName="contactNo">
+      <mat-error *ngIf="signupForm.get('contactNo')?.hasError('required')">Contact Number is required</mat-error>
+    </mat-form-field>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <button mat-raised-button color="primary" (click)="signup()">Sign Up</button>
+    <a routerLink="/sign-in">Sign In</a>
+  </form>
+</div>

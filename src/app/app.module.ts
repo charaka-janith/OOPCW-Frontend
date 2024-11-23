@@ -10,11 +10,14 @@ import {AppComponent} from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import {MatSlideToggle} from '@angular/material/slide-toggle';
+import {SignupComponent} from './signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AppComponent
+    AppComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import {MatSlideToggle} from '@angular/material/slide-toggle';
     MatButtonModule,
     RouterModule,
     AppRoutingModule,
-    MatSlideToggle
+    MatSlideToggle,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
